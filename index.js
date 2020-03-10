@@ -299,7 +299,6 @@ var TicTacToe;
         startNewGame() {
             this.started = false;
             this.renderStartScreen();
-            this.canvas.addEventListener('mouseup', this.matchEventHandler);
         }
         renderLoadingScreen(alpha) {
             this.ctx.clearRect(0, 0, TicTacToe.GAME_WIDTH, TicTacToe.GAME_HEIGHT);
@@ -348,6 +347,7 @@ var TicTacToe;
             // If we were actually loading assets, I think we should finish the loading process here.
             setTimeout(function () {
                 that.loading = false;
+                that.canvas.addEventListener('mouseup', that.matchEventHandler);
                 that.startNewGame();
             }, numDrawCalls * drawInterval);
         }
