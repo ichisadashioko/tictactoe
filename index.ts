@@ -365,6 +365,7 @@ namespace TicTacToe {
         }
 
         startNewGame() {
+            this.started = false
             this.renderStartScreen()
             this.canvas.addEventListener('mouseup', this.matchEventHandler)
         }
